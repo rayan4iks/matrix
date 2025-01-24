@@ -1,0 +1,130 @@
+# Task 1
+# mtr = [[24, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# n = len(mtr)
+# min = 10000000
+# for column in range(n):
+#     for elem in range(n):
+#         if mtr[column][elem] < min:
+#             min = mtr[column][elem]
+# print(min)
+
+# Task 2
+# mtr = [[24, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# n = len(mtr)
+# sum = 0
+# for column in range(n):
+#     for elem in range(n):
+#         sum += mtr[column][elem]
+# print(sum)
+
+# Task 3
+# mtr = [[67, 5, 42],
+#        [5, 78, 86],
+#        [55, 5, 52]
+#        ]
+# n = len(mtr)
+# value_to_count = 5
+# cnt = 0
+# for column in range(n):
+#     for elem in range(n):
+#         if mtr[column][elem] == value_to_count:
+#             cnt += 1
+# print(f'Значение {value_to_count} встречается {cnt} раз(а) в матрице')
+
+# Task 4
+# mtr = [[52, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# n = len(mtr)
+# value_to_count = 52
+# for column in range(n):
+#     for elem in range(n):
+#         if mtr[column][elem] == value_to_count:
+#             print(f'Значение {value_to_count} встречается в {column} строке, элемент №{elem}')
+
+# Task 5
+# mtr = [[52, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# n = len(mtr)
+# sum = 0
+# for column in range(n):
+#     for elem in range(n):
+#         if column == elem:
+#             sum += mtr[column][elem]
+# print(sum)
+
+# Task 6
+# mtr = [[52, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# n = len(mtr)
+# sum = 0
+# for column in range(n):
+#     for elem in range(n):
+#         if column + elem == len(mtr) - 1:
+#             sum += mtr[column][elem]
+# print(sum)
+
+# Task 7
+# mtr = [[52, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# rows = len(mtr)
+# cols = len(mtr[0])
+# max_in_colums = []
+# for col in range(cols):
+#     max_value = mtr[0][col]
+#     for row in range(1, rows):
+#         if mtr[row][col] > max_value:
+#             max_value = mtr[row][col]
+#     max_in_colums.append(max_value)
+# print(f'Максимальные элементы в каждом столбце: {max_in_colums}')
+
+# Task 8
+# mtr = [[52, 63, 78],
+#       [76, 52, 99],
+#       [82, 67, 4]
+#       ]
+# rows = len(mtr)
+# cols = len(mtr[0])
+# max_sum = 0
+# max_index_row = 0
+# for row in range(rows):
+#     current_sum = 0
+#     for col in range(cols):
+#         current_sum += mtr[row][col]
+#         if max_sum == 0 or current_sum > max_sum:
+#             max_sum = current_sum
+#             max_index_row = row
+# print(f'Строка с максимальной суммой элементов: {mtr[max_index_row]}')
+# print(f'Сумма элементов строки: {max_sum}')
+
+# # Task 9
+mtr = [[52, 63, 78],
+      [76, 52, 99],
+      [82, 67, 4]
+      ]
+rows = len(mtr)
+cols = len(mtr[0]) if rows > 0 else 0
+min_sum = None
+min_index_col = 0
+for col in range(cols):
+    current_sum = 0
+    for row in range(rows):
+        current_sum += mtr[row][col]
+    if min_sum is None or current_sum < min_sum:
+        min_sum = current_sum
+        min_index_col = col
+print(f'Столбец с минимальной суммой элементов: {[mtr[row][min_index_col] for row in range(rows)]}')
+print(f'Сумма элементов столбца: {min_sum}')
