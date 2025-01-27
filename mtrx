@@ -128,3 +128,15 @@ for col in range(cols):
         min_index_col = col
 print(f'Столбец с минимальной суммой элементов: {[mtr[row][min_index_col] for row in range(rows)]}')
 print(f'Сумма элементов столбца: {min_sum}')
+
+mtr = [[52, 63, 78],
+       [76, 52, 99],
+       [82, 67, 4]
+       ]
+a = {mtr[row][elem]: 0 for row in range(len(mtr)) for elem in range(len(mtr))}
+n = len(mtr)
+for row in range(n):
+    for elem in range(n):
+        a[mtr[row][elem]] += 1
+unique = [k for (k, v) in a.items() if v == 1]
+print(unique)
